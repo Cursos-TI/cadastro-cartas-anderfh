@@ -7,7 +7,7 @@
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
     
-  char estadoA[3], estadoB[3];
+  char estadoA[2], estadoB[2];
   char codigoA[4], codigoB[4];
   char nomecidadeA01[15], nomecidadeB01[15];
   unsigned long int populacaoA01, populacaoB01;
@@ -26,7 +26,7 @@ int main() {
   printf("Vamos configurar a primeira carta:\n\n");// Perguntar os dados da carta 1
     
   printf("Qual a primeira letra do nome do estado?\n");// Perguntar a primeira letra do estado
-  scanf("%c", &estadoA);
+  scanf("%s", &estadoA);
 
   printf("Qual o código da carta?\n");// Perguntar o código da carta
   scanf("%s", codigoA);
@@ -49,7 +49,7 @@ int main() {
   printf("\nAgora vamos configurar a segunda carta:\n\n");// Perguntar os dados da carta 2
 
   printf("Qual a primeira letra do nome do estado?\n");// Perguntar a primeira letra do estado
-  scanf(" %c", &estadoB);
+  scanf(" %s", &estadoB);
 
   printf("Qual o código da carta?\n");// Perguntar o código da carta
   scanf("%s", codigoB);
@@ -81,7 +81,7 @@ int main() {
   // Área para exibição dos dados da cidade
 
   printf("\n--- Carta 1 ---\n");// Mostrar os dados da carta 1
-  printf("- Estado %c\n", estadoA);// Mostrar a primeira letra do estado
+  printf("- Estado %s\n", estadoA);// Mostrar a primeira letra do estado
   printf("- Código %s\n", codigoA);// Mostrar o código da carta
   printf("- Cidade: %s\n", nomecidadeA01);// Mostrar o nome da cidade
   printf("- População: %lu habitantes\n", populacaoA01);// Mostrar a população da cidade
@@ -93,7 +93,7 @@ int main() {
   printf("- O Super Poder é: %.2f \n", superPoderA01);//mostra o Super Poder da cidade
 
   printf("\n--- Carta 2 ---\n");// Mostrar os dados da carta 2
-  printf("- Estado %c\n", estadoB);// Mostrar a primeira letra do estado
+  printf("- Estado %s\n", estadoB);// Mostrar a primeira letra do estado
   printf("- Código %s\n", codigoB);// Mostrar o código da carta
   printf("- Cidade: %s\n", nomecidadeB01);// Mostrar o nome da cidade
   printf("- População: %lu habitantes\n", populacaoB01);// Mostrar a população da cidade
