@@ -7,7 +7,7 @@
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
     
-  char estadoA, estadoB;
+  char estadoA[3], estadoB[3];
   char codigoA[4], codigoB[4];
   char nomecidadeA01[15], nomecidadeB01[15];
   unsigned long int populacaoA01, populacaoB01;
@@ -104,41 +104,18 @@ int main() {
   printf("- PIB per capita: R$%.2f\n", pibpercapitaB01);//mostra o PIB per capita da cidade
   printf("- O Super Poder é: %.2f \n", superPoderB01);//mostra o Super Poder da cidade
 
-  //Comparações
+  //Comparação de atributos
 
-  int vencedorPopulação, resultadoPopulação = populacaoA01 > populacaoB01;//calcula a comparação de população
-  int vencedorArea, resultadoArea = areaA01 > areaB01;//calcula a comparação de area
-  int vencedorPib, resultadoPib = pibA01 > pibB01;//calcula a comparação de PIB
-  int vencedorPontotur, resultadoPontotur = pontoturA01 > pontoturB01;//calcula a comparação de Pontos Turísticos
-  int vencedorDensidadepop, resultadoDensidadepop = densidadepopA01 < densidadepopB01;//calcula a comparação inversa de densidade populacional
-  int vencedorPibpercapita, resultadoPibpercapita = pibpercapitaA01 > pibpercapitaB01;//calcula a comparação de PIB per capita
-  int vencedorSuperpoder, resultadoSuperpoder = superPoderA01 > superPoderB01;//calcula a comparação de Super Poderes
+  printf("\n--- Comparando as cartas ---\n");//Mostra a comparação escolhida
+  printf("-- Atributo: População --\n");//Mostra o atributo escolhido para comparação
+  printf("- Carta 1 - %s: %lu habitantes\n", nomecidadeA01, populacaoA01);// Mostra o valor do atributo para a carta 1
+  printf("- Carta 2 - %s: %lu habitantes\n", nomecidadeB01, populacaoB01);// Mostra o valor do atributo para a carta 2
+  printf("\nResultado: ");// Apresenta o resultado
 
-  printf("\n--- Comparação das cartas ---\n");//mostra os resultados das comparações
-  printf("- População: Carta %d venceu (%d)\n",// mostra o resultado da comparação das populações
-    vencedorPopulação = 2 - resultadoPopulação, resultadoPopulação);
-  printf("- Área: Carta %d venceu (%d)\n",// mostra o resultado da comparação das áreas
-    vencedorArea = 2 - resultadoArea, resultadoArea);
-  printf("- PIB: Carta %d venceu (%d)\n",// mostra o resultado da comparação dos PIBs
-    vencedorPib = 2 - resultadoPib, resultadoPib);
-  printf("- Pontos Turísticos: Carta %d venceu (%d)\n",// mostra o resultado da comparação dos pontos turísticos
-    vencedorPontotur = 2 - resultadoPontotur, resultadoPontotur);
-  printf("- Densidade Populacional: Carta %d venceu (%d)\n",// mostra o resultado da comparação da menor densidade populacional
-    vencedorDensidadepop = 2 - resultadoDensidadepop, resultadoDensidadepop);
-  printf("- PIB per capita: Carta %d venceu (%d)\n",// mostra o resultado da comparação do PIB per capita
-    vencedorPibpercapita = 2 - resultadoPibpercapita, resultadoPibpercapita);
-  printf("- População: Carta %d venceu (%d)\n",// mostra o resultado da comparação dos Super Poderes
-    vencedorSuperpoder = 2 - resultadoSuperpoder, resultadoSuperpoder);
-
-  //Resultado final da batalha
-
-  int placarA = resultadoPopulação + resultadoArea + resultadoPib + resultadoPontotur + resultadoDensidadepop + resultadoPibpercapita + resultadoSuperpoder;
-  int placarB = 7 - placarA;
-  int vencedorFinal = 2 - (placarA > placarB);
-
-  printf("\n--- Placar da Batalha ---\n");
-  printf(" Carta 1 - %d x %d - Carta 2\n", placarA, placarB);
-  printf("\n-- Carta %d é a vencedora!", vencedorFinal);
-
+  if(populacaoA01 > populacaoB01){//Faz a comparação das cartas e retorna o vencedor
+    printf("Carta 1 venceu!\n\n");
+  } else{
+    printf("Carta 2 venceu!\n\n");
+  }
 return 0;
 } 
