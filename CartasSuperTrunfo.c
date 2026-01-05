@@ -1,10 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 // Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das cartas
-// Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
 
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
@@ -12,16 +8,14 @@ int main() {
   char estadoA[2] = "A", estadoB[2] = "B";
   char codigoA[4] = "A01", codigoB[4] = "B01";
   char nomecidadeA01[15] = "Aires", nomecidadeB01[15] = "Buenos";
-  unsigned long int populacaoA01, populacaoB01;
+  float populacaoA01, populacaoB01;
   float areaA01, areaB01;
   float pibA01, pibB01;
-  int pontoturA01, pontoturB01;
+  float pontoturA01, pontoturB01;
   float densidadepopA01, densidadepopB01;
   float pibpercapitaA01, pibpercapitaB01;
   float superPoderA01, superPoderB01;
-  char atributo[30], unidadeMedida[30];
   int escolhaAtributo;
-  float valorAtributoA01, valorAtributoB01;
 
   //pré definição dos dados
 
@@ -76,27 +70,37 @@ int main() {
     case 1:
       printf("\n--- Comparando as cartas ---\n");//Mostra a comparação escolhida
       printf("-- Atributo: População --\n");//Mostra o atributo escolhido para comparação
-      printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, populacaoA01, "habitantes");// Mostra o valor do atributo para a carta 1
-      printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, populacaoB01, "habitantes");// Mostra o valor do atributo para a carta 2
+      printf("- Carta 1 - %s: %.0f %s\n", nomecidadeA01, populacaoA01, "habitantes");// Mostra o valor do atributo para a carta 1
+      printf("- Carta 2 - %s: %.0f %s\n", nomecidadeB01, populacaoB01, "habitantes");// Mostra o valor do atributo para a carta 2
       printf("\nResultado: ");// Apresenta o resultado
-
-      if(populacaoA01 > populacaoB01){//Faz a comparação das cartas e retorna o vencedor
+      if (populacaoA01 == populacaoB01)
+      {
+        printf("Empate!\n\n");
+        break;
+      }else{if(populacaoA01 > populacaoB01){//Faz a comparação das cartas e retorna o vencedor
         printf("Carta 1 venceu!\n\n");
       } else{
         printf("Carta 2 venceu!\n\n");
+      }
       }
       break;
     case 2:
       printf("\n--- Comparando as cartas ---\n");//Mostra a comparação escolhida
       printf("-- Atributo: Área --\n");//Mostra o atributo escolhido para comparação
-      printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, areaA01, "km²");// Mostra o valor do atributo para a carta 1
-      printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, areaB01, "km²");// Mostra o valor do atributo para a carta 2
+      printf("- Carta 1 - %s: %.0f %s\n", nomecidadeA01, areaA01, "km²");// Mostra o valor do atributo para a carta 1
+      printf("- Carta 2 - %s: %.0f %s\n", nomecidadeB01, areaB01, "km²");// Mostra o valor do atributo para a carta 2
       printf("\nResultado: ");// Apresenta o resultado
+      if (areaA01 == areaB01)
+      {
+        printf("Empate!\n\n");
+        break;
+      }else{
 
       if(areaA01 > areaB01){//Faz a comparação das cartas e retorna o vencedor
         printf("Carta 1 venceu!\n\n");
       } else{
         printf("Carta 2 venceu!\n\n");
+      }
       }
       break;
     case 3:
@@ -105,24 +109,36 @@ int main() {
       printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, pibA01, "Bilhões de Reais");// Mostra o valor do atributo para a carta 1
       printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, pibB01, "Bilhões de Reais");// Mostra o valor do atributo para a carta 2
       printf("\nResultado: ");// Apresenta o resultado
+      if (pibA01 == pibB01)
+      {
+        printf("Empate!\n\n");
+        break;
+      }else{
 
       if(pibA01 > pibB01){//Faz a comparação das cartas e retorna o vencedor
         printf("Carta 1 venceu!\n\n");
       } else{
         printf("Carta 2 venceu!\n\n");
       }
+      }
       break;
     case 4:
       printf("\n--- Comparando as cartas ---\n");//Mostra a comparação escolhida
       printf("-- Atributo: Pontos turísticos --\n");//Mostra o atributo escolhido para comparação
-      printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, pontoturA01, "pontos turísticos");// Mostra o valor do atributo para a carta 1
-      printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, pontoturB01, "pontos turísticos");// Mostra o valor do atributo para a carta 2
+      printf("- Carta 1 - %s: %.0f %s\n", nomecidadeA01, pontoturA01, "pontos turísticos");// Mostra o valor do atributo para a carta 1
+      printf("- Carta 2 - %s: %.0f %s\n", nomecidadeB01, pontoturB01, "pontos turísticos");// Mostra o valor do atributo para a carta 2
       printf("\nResultado: ");// Apresenta o resultado
+      if (pontoturA01 == pontoturB01)
+      {
+        printf("Empate!\n\n");
+        break;
+      }else{
 
       if(pontoturA01 > pontoturB01){//Faz a comparação das cartas e retorna o vencedor
         printf("Carta 1 venceu!\n\n");
       } else{
         printf("Carta 2 venceu!\n\n");
+      }
       }
       break;
     case 5:
@@ -131,11 +147,17 @@ int main() {
       printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, densidadepopA01, "hab/Km²");// Mostra o valor do atributo para a carta 1
       printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, densidadepopB01, "hab/Km²");// Mostra o valor do atributo para a carta 2
       printf("\nResultado: ");// Apresenta o resultado
+      if (densidadepopA01 == densidadepopB01)
+      {
+        printf("Empate!\n\n");
+        break;
+      }else{
 
       if(densidadepopA01 < densidadepopB01){//Faz a comparação das cartas e retorna o vencedor
         printf("Carta 1 venceu!\n\n");
       } else{
         printf("Carta 2 venceu!\n\n");
+      }
       }
       break;
     case 6:
@@ -144,11 +166,17 @@ int main() {
       printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, pibpercapitaA01, "Reais");// Mostra o valor do atributo para a carta 1
       printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, pibpercapitaB01, "Reais");// Mostra o valor do atributo para a carta 2
       printf("\nResultado: ");// Apresenta o resultado
+      if (pibpercapitaA01 == pibpercapitaB01)
+      {
+        printf("Empate!\n\n");
+        break;
+      }else{
 
       if(pibpercapitaA01 > pibpercapitaB01){//Faz a comparação das cartas e retorna o vencedor
         printf("Carta 1 venceu!\n\n");
       } else{
         printf("Carta 2 venceu!\n\n");
+      }
       }
       break;
     case 7:
@@ -157,11 +185,17 @@ int main() {
       printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, superPoderA01, "pontos");// Mostra o valor do atributo para a carta 1
       printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, superPoderB01, "pontos");// Mostra o valor do atributo para a carta 2
       printf("\nResultado: ");// Apresenta o resultado
+      if (superPoderA01 == superPoderB01)
+      {
+        printf("Empate!\n\n");
+        break;
+      }else{
 
       if(superPoderA01 > superPoderB01){//Faz a comparação das cartas e retorna o vencedor
         printf("Carta 1 venceu!\n\n");
       } else{
         printf("Carta 2 venceu!\n\n");
+      }
       }
     default:
       printf("Número não corresponde a um atributo.\n");
