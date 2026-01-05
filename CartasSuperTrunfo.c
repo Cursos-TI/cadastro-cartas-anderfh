@@ -28,7 +28,7 @@ int main() {
   populacaoA01 = 12000000;
   areaA01 = 700000;
   pibA01 = 130;
-  pontoturA01 = 80;
+  pontoturA01 = 30;
 
   populacaoB01 = 2000000;
   areaB01 = 1300000;
@@ -52,7 +52,7 @@ int main() {
   printf("1. Novo Jogo\n");
   printf("2. Configurar cartas\n");
   printf("3. Sair\n");
-  printf("Escolha uma opção: \n");
+  printf("\nEscolha uma opção: \n");
   scanf("%d", &escolhaMenu);
 
   switch (escolhaMenu)
@@ -74,82 +74,99 @@ int main() {
     switch (escolhaAtributo)
     {
     case 1:
-      strcpy(atributo, "População");
-      valorAtributoA01 = populacaoA01;
-      valorAtributoB01 = populacaoB01;
-      strcpy(unidadeMedida, "habitantes");
-      break;
-    case 2:
-      strcpy(atributo, "Área");
-      valorAtributoA01 = areaA01;
-      valorAtributoB01 = areaB01;
-      strcpy(unidadeMedida, "km²");
-      break;
-    case 3:
-      strcpy(atributo, "PIB");
-      valorAtributoA01 = pibA01;
-      valorAtributoB01 = pibB01;
-      strcpy(unidadeMedida, "Bilhões de Reais");
-      break;
-    case 4:
-      strcpy(atributo, "Pontos turísticos");
-      valorAtributoA01 = pontoturA01;
-      valorAtributoB01 = pontoturB01;
-      strcpy(unidadeMedida, "pontos");
-      break;
-    case 5:
-      strcpy(atributo, "Densidade demográfica");
-      valorAtributoA01 = densidadepopA01;
-      valorAtributoB01 = densidadepopB01;
-      strcpy(unidadeMedida, "hab/Km²");
-      break;
-    case 6:
-      strcpy(atributo, "PIB per capita");
-      valorAtributoA01 = pibpercapitaA01;
-      valorAtributoB01 = pibpercapitaB01;
-      strcpy(unidadeMedida, "Reais");
-      break;
-    case 7:
-      strcpy(atributo, "Super poder");
-      valorAtributoA01 = superPoderA01;
-      valorAtributoB01 = superPoderB01;
-      strcpy(unidadeMedida, "pontos");
-      break;
-    
-    default:
-      printf("Número não corresponde a um atributo.");
-      break;
-    }
-  
-    //Comparação de atributos
-
-    if(escolhaAtributo < 1 || escolhaAtributo > 7){
-      printf("Atributo inválido!\n\n");
-      break;
-    }else{if(valorAtributoA01 == valorAtributoB01){
       printf("\n--- Comparando as cartas ---\n");//Mostra a comparação escolhida
-      printf("-- Atributo: %s --\n", atributo);//Mostra o atributo escolhido para comparação
-      printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, valorAtributoA01, unidadeMedida);// Mostra o valor do atributo para a carta 1
-      printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, valorAtributoB01, unidadeMedida);// Mostra o valor do atributo para a carta 2
-      printf("\nResultado: ");// Apresenta o resultado
-      printf("Empate!\n\n");
-      break;
-      }
-
-      printf("\n--- Comparando as cartas ---\n");//Mostra a comparação escolhida
-      printf("-- Atributo: %s --\n", atributo);//Mostra o atributo escolhido para comparação
-      printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, valorAtributoA01, unidadeMedida);// Mostra o valor do atributo para a carta 1
-      printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, valorAtributoB01, unidadeMedida);// Mostra o valor do atributo para a carta 2
+      printf("-- Atributo: População --\n");//Mostra o atributo escolhido para comparação
+      printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, populacaoA01, "habitantes");// Mostra o valor do atributo para a carta 1
+      printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, populacaoB01, "habitantes");// Mostra o valor do atributo para a carta 2
       printf("\nResultado: ");// Apresenta o resultado
 
-      if(valorAtributoA01 > valorAtributoB01){//Faz a comparação das cartas e retorna o vencedor
+      if(populacaoA01 > populacaoB01){//Faz a comparação das cartas e retorna o vencedor
         printf("Carta 1 venceu!\n\n");
       } else{
         printf("Carta 2 venceu!\n\n");
       }
-    }
+      break;
+    case 2:
+      printf("\n--- Comparando as cartas ---\n");//Mostra a comparação escolhida
+      printf("-- Atributo: Área --\n");//Mostra o atributo escolhido para comparação
+      printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, areaA01, "km²");// Mostra o valor do atributo para a carta 1
+      printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, areaB01, "km²");// Mostra o valor do atributo para a carta 2
+      printf("\nResultado: ");// Apresenta o resultado
 
-    
+      if(areaA01 > areaB01){//Faz a comparação das cartas e retorna o vencedor
+        printf("Carta 1 venceu!\n\n");
+      } else{
+        printf("Carta 2 venceu!\n\n");
+      }
+      break;
+    case 3:
+      printf("\n--- Comparando as cartas ---\n");//Mostra a comparação escolhida
+      printf("-- Atributo: PIB --\n");//Mostra o atributo escolhido para comparação
+      printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, pibA01, "Bilhões de Reais");// Mostra o valor do atributo para a carta 1
+      printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, pibB01, "Bilhões de Reais");// Mostra o valor do atributo para a carta 2
+      printf("\nResultado: ");// Apresenta o resultado
+
+      if(pibA01 > pibB01){//Faz a comparação das cartas e retorna o vencedor
+        printf("Carta 1 venceu!\n\n");
+      } else{
+        printf("Carta 2 venceu!\n\n");
+      }
+      break;
+    case 4:
+      printf("\n--- Comparando as cartas ---\n");//Mostra a comparação escolhida
+      printf("-- Atributo: Pontos turísticos --\n");//Mostra o atributo escolhido para comparação
+      printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, pontoturA01, "pontos turísticos");// Mostra o valor do atributo para a carta 1
+      printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, pontoturB01, "pontos turísticos");// Mostra o valor do atributo para a carta 2
+      printf("\nResultado: ");// Apresenta o resultado
+
+      if(pontoturA01 > pontoturB01){//Faz a comparação das cartas e retorna o vencedor
+        printf("Carta 1 venceu!\n\n");
+      } else{
+        printf("Carta 2 venceu!\n\n");
+      }
+      break;
+    case 5:
+      printf("\n--- Comparando as cartas ---\n");//Mostra a comparação escolhida
+      printf("-- Atributo: Densidade demográfica --\n");//Mostra o atributo escolhido para comparação
+      printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, densidadepopA01, "hab/Km²");// Mostra o valor do atributo para a carta 1
+      printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, densidadepopB01, "hab/Km²");// Mostra o valor do atributo para a carta 2
+      printf("\nResultado: ");// Apresenta o resultado
+
+      if(densidadepopA01 < densidadepopB01){//Faz a comparação das cartas e retorna o vencedor
+        printf("Carta 1 venceu!\n\n");
+      } else{
+        printf("Carta 2 venceu!\n\n");
+      }
+      break;
+    case 6:
+      printf("\n--- Comparando as cartas ---\n");//Mostra a comparação escolhida
+      printf("-- Atributo: PIB per capita --\n");//Mostra o atributo escolhido para comparação
+      printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, pibpercapitaA01, "Reais");// Mostra o valor do atributo para a carta 1
+      printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, pibpercapitaB01, "Reais");// Mostra o valor do atributo para a carta 2
+      printf("\nResultado: ");// Apresenta o resultado
+
+      if(pibpercapitaA01 > pibpercapitaB01){//Faz a comparação das cartas e retorna o vencedor
+        printf("Carta 1 venceu!\n\n");
+      } else{
+        printf("Carta 2 venceu!\n\n");
+      }
+      break;
+    case 7:
+      printf("\n--- Comparando as cartas ---\n");//Mostra a comparação escolhida
+      printf("-- Atributo: Super poder --\n");//Mostra o atributo escolhido para comparação
+      printf("- Carta 1 - %s: %.2f %s\n", nomecidadeA01, superPoderA01, "pontos");// Mostra o valor do atributo para a carta 1
+      printf("- Carta 2 - %s: %.2f %s\n", nomecidadeB01, superPoderB01, "pontos");// Mostra o valor do atributo para a carta 2
+      printf("\nResultado: ");// Apresenta o resultado
+
+      if(superPoderA01 > superPoderB01){//Faz a comparação das cartas e retorna o vencedor
+        printf("Carta 1 venceu!\n\n");
+      } else{
+        printf("Carta 2 venceu!\n\n");
+      }
+    default:
+      printf("Número não corresponde a um atributo.\n");
+      break;
+    }
     break;
   case 2:
     // Área para entrada de dados
